@@ -2,7 +2,7 @@ import UIKit
 
 // Functions
 
-// Functions are core to all programming languages. Defining they in Swift is
+// Functions are core to all programming languages. Defining them in Swift is
 // very similar to other languages.
 
 func doNothing() {
@@ -65,27 +65,40 @@ print("The number Pi is roughly \(22.0/7.0)")
 
 // 1. Write a function that prints your name using print().
 
+func printName() {
+    print("Gobind") //prints my name
+}
 
 
 // 2. Call/invoke the function you just wrote
 
+printName()
 
 
 // 3. Write a function that takes a String as a parameter.
 //   Your function should print the string with "***" before and
 //   after the input string.
 
+func starsString(input: String) {
+    print("***\(input)***")
+}
+
+starsString(input: "Gobind")
 
 
 // 4. Write a function that calculates the area of a rectangle.
 //   It should take the width and height as parameters of type Int
 //   and return an Int
 
+func areaRectangle(width: Int, height: Int) -> Int {
+    return width * height
+}
 
 
 // 5. Call your area function with the values 25 and 35 and print
 //   returned results.
 
+print(areaRectangle(width: 25, height: 35))
 
 
 // 6. Write a function that calculates the area of a circle. It
@@ -93,13 +106,15 @@ print("The number Pi is roughly \(22.0/7.0)")
 //   is roughly 3.14 * radius * radius.
 //   You'll have to convert the radius to Double to do the math!
 
+func areaCircle(radius: Int) -> Double {
+    return 3.14 * Double(radius) * Double(radius)
+}
+
+print(areaCircle(radius: 5))
 
 
 
-
-
-
-// Functions in swift use named paramters but can also define an extrnal
+// Functions in Swift use named paramters but can also define an extrnal
 // and internal name. The internal name is used inside the function block
 // while the external name is used when invoking the function.
 
@@ -108,7 +123,7 @@ func someFunc(externalName internalName: Int) -> Int {
 }
 
 // Notice there are two names: externalName and internalName.
-// Notice the internale name is used inside the code block.
+// Notice the internal name is used inside the code block.
 // The external name is used when calling the function:
 
 let res = someFunc(externalName: 40) // externalName is used here!
@@ -123,10 +138,11 @@ let res = someFunc(externalName: 40) // externalName is used here!
 
 
 // The function below uses only the internal names. This means you'll
-// need to use the names: width1, height1, width2, and heigh2
+// need to use the names: width1, height1, width2, and height2
 
 func resize(width1: Int, height1: Int, width2: Int, height2: Int) {
     // use width1, height1, width2, and height2 here
+    
 }
 
 // Use width1, height2, width2, height2 here also
@@ -157,7 +173,7 @@ resize2(fromWidth: 20, fromHeight: 30, toWidth: 100, toHeight: 400)
 // different semantic meaning when calling a function
 // and when used inside a function. Using different names in each place can help
 // clarify how to use a function. Expect to see this often when programming
-// in Swift and UIKit it's how they do it!
+// in Swift and UIKit; it's how they do it!
 
 // Consider this:
 
@@ -172,29 +188,40 @@ greet(user: "Frango", withPrefix: "Mr.")
 
 
 
-// Write some new functions. Be sure to make use of internal and extrernal paramters.
+// Write some new functions. Be sure to make use of internal and external parameters.
 
 // 1. Imagine you are making an app to help contractors calculate area.
 //    This would help them estimate cost for materials and time. Your
 //    first function will calculate the area of a square. Your function
 //    should accept two Int values: length and width, and a cost per
-//    square foot a Double. It should calculate the area and multiply by
+//    square foot as a Double. It should calculate the area and multiply by
 //    the cost and return the answer as a Double. For example imagine
 //    length of 48 and a width of 96 and a cost of 0.33 per square foot.
-//    The function should return: 4 * 8 * 0.10 = 10.56
+//    The function should return: 48 * 96 * 0.33 = 1520.64
 
 
+func calculateArea(multiplyWidth width: Int, byHeight height: Int, andCostPerSquareFoot cost: Double) -> Double {
+    return Double(width) * Double(height) * cost
+}
 
-// 3. Write a function that orders a pizza. It should take the type of
+print(calculateArea(multiplyWidth: 96, byHeight: 48, andCostPerSquareFoot: 0.33))
+
+
+// 2. Write a function that orders a pizza. It should take the type of
 //    pie as a string (cheese, pepperoni, etc.), the size of the pie
-//    inches in inches as an int, the number of toppings as an Int,
+//    in inches as an int, the number of toppings as an Int,
 //    and return a tuple that includes the type with the size for example:
 //    "cheese 10"" as string, and the cost as a Double.
 //    Calculate the cost as the area times 0.05 + 0.03 * number of toppings
 //    For example a 5" radius pie with 3 toppings:
 //    5 * 5 * 3.14 * (0.05 + 0.03 * 3) = 10.99
 
+func orderPizza(with type: String, radiusOf size: Int, andToppings numToppings: Int) -> (String, Double) {
+    let cost = areaCircle(radius: size) * (0.05 + 0.03 * Double(numToppings))
+    return ("\(type) \(size)", cost)
+}
 
+print(orderPizza(with: "Cheese", radiusOf: 5, andToppings: 3))
 
 
 
