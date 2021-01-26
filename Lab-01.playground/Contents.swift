@@ -10,7 +10,7 @@ height  = 10
 height = 8
 
 // Define a new variable width with a value of 12:
-var width = 12
+var width: Double = 12
 
 // Assign a new value to width:
 width = 7
@@ -57,7 +57,7 @@ let pi = 3.14
 // Define a variable for your name and shoesize below.
 // Since this is unlikely to change use `let`:
 let myName = "Gobind"
-let shoeSize = 13
+let shoeSize: Double = 13
 
 
 // Challenge:
@@ -144,6 +144,7 @@ var avgHeartRate: Double
 // Int is a whole number or integer and Double is a
 // decimal or floating point number.
 
+// DONE
 
 
 // Implicit types
@@ -161,38 +162,56 @@ var avgHeartRate: Double
 // Binary operator '*' cannot be applied to operands of type 'int' and 'Double'
 // Radius is an int and pi is a double. Fix it by making radius type double.
 
-//let slices = 8
-//let radius = 10
-//let area = radius * radius * pi // error
+let slices = 8
+let radius: Double = 10
+let areaCircle = radius * radius * pi // error
 
 // That worked but Slices should be a whole number. What happens now, Error:
 // Binary operator '/' connot be applied to operands of type 'Double' and 'Int'
 // In this case you can cast a value as another type like this: Double(8)
 // Try it here:
 
-//let sliceArea = area / slices
+let sliceArea = areaCircle / Double(slices)
 
-//print(area) // 314.0
-//print(sliceArea) // 39.25
+print(areaCircle) // 314.0
+print(sliceArea) // 39.25
+
 
 
 // Challenges:
 // 1. Your app needs to accept a username and hold it in a variable. What type is
 //   best for this variable?
 
+// ANSWER: A string is best for a username variable.
+
+
 // 2. Your app needs to accept a password. What type should this be?
+
+// ANSWER: A string is best for a password variable.
+
 
 // 3. Your app needs to accept a variable that holds a user's shoe size. What type
 //   is it?
 
+// ANSWER: A double is best for a shoe size variable, since half-sizes are common (such as 10.5).
+
+
 // 4. Your app has a UIPicker that allows a visitor to choose their gender. The
 //   choices are M, F, O(ther), N(ot specified). What type should these be?
+
+// ANSWER: These should be of type character, since only one character is necessary to represent each choice.
+
 
 // 5. Your app asks whether an applicant is older than 18. This is a check box or a
 //   switch, what type is best here?
 
+// ANSWER: A boolean is best here, since it is either true or false that an applicant is older than 18.
+
+
 // 6. Your app asks how many people are in your party. (Imagine a reservation form)
 //   What type is this?
+
+// ANSWER: This is of type integer, since the number of people should only be represented by a whole number.
 
 
 
