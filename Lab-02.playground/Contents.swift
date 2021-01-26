@@ -24,9 +24,9 @@ let truple = (1,2,3)
 let qruple = (1,2,3,4)
 
 // Option click on each of the variable above to
-// check it's type.
+// check its type.
 myTuple  // (Int, Int)
-otherTup // (String, Int)
+otherTup // (String, Double)
 truple   // (Int, Int, Int)
 qruple   // (Int, Int, Int, Int)
 
@@ -36,17 +36,25 @@ qruple   // (Int, Int, Int, Int)
 
 // 1. Login holds name and password both type String
 
+let login = (username: "gobind", password: "password123")
+//let login: (username: String, password: String) = (username: "gobind", password: "password123")
 
 
-// 2. Vector holds two nunmbers: 1.56, 3.45
+// 2. Vector holds two numbers: 1.56, 3.45
+
+let vector = (1.56, 3.45)
 
 
 
 // 3. Profile holds name, age, shoesize
 
+let profile = (name: "Gobind", age: 22, shoesize: 13)
 
 
-// 3. Address holds street address, city, state, and zip code
+
+// 4. Address holds street address, city, state, and zip code
+
+let address = (street: "555 Post St", city: "San Francisco", state: "CA", zipCode: 94102)
 
 
 
@@ -64,13 +72,13 @@ let coords: (Double, Double) = (37.754871, -122.498789)
 // practice to also add the type to prevent mistakes.
 // Explicitly type each of the variables below:
 
-let name = ("Frango", "Martini")
-let pizza = ("Peperoni", "Large", 21.99)
-let damage = ("heat", 120000)
+let name: (String, String) = ("Frango", "Martini")
+let pizza: (String, String, Double) = ("Pepperoni", "Large", 21.99)
+let damage: (String, Int) = ("heat", 120000)
 
 
 
-// Accessinng the values of a tuple is similar to accessing values
+// Accessing the values of a tuple is similar to accessing values
 // from an array, object or dictionary and a little different.
 // Each value is indexed. Use the dot (.) followed by the index.
 
@@ -80,6 +88,12 @@ print(name.1) // Martini
 // Challenge:
 // Print all of the values from the pizza and damage
 
+print(pizza.0)
+print(pizza.1)
+print(pizza.2)
+
+print(damage.0)
+print(damage.1)
 
 
 // Tuples are great but it can sometimes be confusing to identify
@@ -100,18 +114,28 @@ print(track.time) // 1.57
 
 // 1. location: latitude: 37.754871, longitude: -122.498789
 
+let location: (latitude: Double, longitude: Double) = (37.754871, -122.498789)
 
 
 // 2. doughnut: type: cake, flavor: chocolate, has sprinkles: false
 
-
+let doughnut: (type: String, flavor: String, hasSprinkles: Bool) = ("cake", "chocolate", false)
 
 // 3. shoe: model: Skate, color: red, size: 9.5
 
+let shoe: (model: String, color: String, size: Double) = ("Skate", "red", 9.5)
 
 
 // Challenge:
 // Print each value from the three tuples you defined above:
 
+print(location.latitude)
+print(location.longitude)
 
+print(doughnut.type)
+print(doughnut.flavor)
+print(doughnut.hasSprinkles)
 
+print(shoe.model)
+print(shoe.color)
+print(shoe.size)
